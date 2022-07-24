@@ -1,11 +1,13 @@
 package entity;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -14,6 +16,7 @@ import lombok.ToString;
 @Table(name = "addresst")
 @Data
 @NoArgsConstructor
+@Builder
 @AllArgsConstructor
 @ToString
 public class Addresse {
@@ -31,6 +34,6 @@ public class Addresse {
 	private String city;
 	
 	@Column
-	private String zipcode;
+	private long zipcode;
 
 }
