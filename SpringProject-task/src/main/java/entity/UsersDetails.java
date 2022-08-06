@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "userst")
+@Table(name = "users")
 @Data
 @NoArgsConstructor
 @Builder
@@ -51,6 +51,7 @@ public class UsersDetails {
  
 	@OneToMany(targetEntity = Addresse.class, cascade = CascadeType.ALL)
 	@JoinColumn(name="u_id", referencedColumnName = "id")
+	
 	private List<Addresse> address;
 
 }

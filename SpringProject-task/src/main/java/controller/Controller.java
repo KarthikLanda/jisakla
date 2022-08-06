@@ -24,7 +24,7 @@ public class Controller {
 	@PostMapping("/save/users")
 	public UsersDetails saveusers(@RequestBody UserDataDto usersdto)
 	{
-		return dtoservice.saveusers(dtoservice);
+		return dtoservice.saveusers(usersdto);
 	}
 
 	@GetMapping("/get/users")

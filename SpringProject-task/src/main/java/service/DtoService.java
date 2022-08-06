@@ -3,10 +3,12 @@ package service;
 import java.util.List;
 
 
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import dto.UserDataDto;
 import entity.UsersDetails;
 import repository.AddressRepository;
 import repository.UserRepository;
@@ -22,9 +24,13 @@ public class DtoService {
 	
 	ModelMapper modelmapper = new ModelMapper();
 	
-	public UsersDetails saveusers(DtoService dtodervice)
+	public  DtoService(UserRepository usersRepository) {
+	       this.usersRepository = usersRepository;
+	}
+
+	public UsersDetails saveusers(UserDataDto userdatadto)
 	{
-		UsersDetails user = modelmapper.map(dtodervice, UsersDetails.class);
+		UsersDetails user = modelmapper.map(userdatadto, UsersDetails.class);
 		return usersRepository.save(user);
 	}
 	
@@ -33,9 +39,9 @@ public class DtoService {
 		return usersRepository.findAll();
 	}
 	
-	public UsersDetails updateusers(DtoService dtodervice) 
+	public UsersDetails updateusers(UserDataDto usersdto) 
 	{
-		UsersDetails users = modelmapper.map(dtodervice, UsersDetails.class);
+		UsersDetails users = modelmapper.map(usersdto, UsersDetails.class);
 		return usersRepository.save(users);
 	}
 	

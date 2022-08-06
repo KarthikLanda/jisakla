@@ -15,7 +15,6 @@ import lombok.ToString;
 public class UserDataDto {
 	
 	    private int id;
-		private String name;
 		private String username;
 		private String email;
 		private String phone;
