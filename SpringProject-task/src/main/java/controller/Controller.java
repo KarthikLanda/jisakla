@@ -34,12 +34,10 @@ public class Controller {
 	}
 	
 	@PutMapping("/update/user")
-	public UsersDetails updateUserDetailsa(@RequestBody UserDataDto usersdto) 
+	public UsersDetails updateusers(@RequestBody UserDataDto usersdto) 
 	{
-		return dtoservice.updateusers(dtoservice);
+		return dtoservice.updateusers(usersdto);
 	}
-	
-	
 	@DeleteMapping("/deleteUser/{id}")
 	public void deleteuser(@PathVariable("id") long id) 
 	{

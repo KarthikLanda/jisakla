@@ -1,8 +1,7 @@
 package service;
 
 import java.util.List;
-
-
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +38,13 @@ public class DtoService {
 		return usersRepository.findAll();
 	}
 	
-	public UsersDetails updateusers(UserDataDto usersdto) 
+	public UsersDetails updateusers(UserDataDto userdatadto) 
 	{
-		UsersDetails users = modelmapper.map(usersdto, UsersDetails.class);
+		UsersDetails users = modelmapper.map(userdatadto, UsersDetails.class);
 		return usersRepository.save(users);
+	}
+	public Optional<UsersDetails> getuserdetails(long id){
+		return usersRepository.findById(id);
 	}
 	
 	public void deleteuser(long id) 
